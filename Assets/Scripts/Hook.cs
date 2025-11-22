@@ -19,6 +19,7 @@ public class Hook : MonoBehaviour
     public float currentHookLength = 0.0f;
     public Vector2 hookOrigin;
     public Vector2 hookDirection;
+    public SpaceObject hookedObject = null;
 
     private void Awake()
     {
@@ -59,7 +60,8 @@ public class Hook : MonoBehaviour
             {
                 if (collision.gameObject.CompareTag("Object"))
                 {
-                    yield return StartCoroutine(Pull(collision.GetComponent<SpaceObject>()));
+                    hookedObject = collision.GetComponent<SpaceObject>();
+                    yield return StartCoroutine(Pull(hookHead.position - collision.transform.position));
                     yield break;
                 }
             }
@@ -70,18 +72,18 @@ public class Hook : MonoBehaviour
         yield return Retract();
     }
 
-    public IEnumerator Pull(SpaceObject obj)
+    public IEnumerator Pull(Vector2 objHeadOffset)
     {
         state = HookState.Pulling;
 
-        Player.instance.rb.AddForce(obj.mass * Player.instance.hookPullForce * hookDirection);
-        obj.rb.AddForce(Player.instance.mass * Player.instance.hookPullForce * (Player.instance.transform.position - obj.transform.position).normalized);
+        Player.instance.rb.AddForce(Player.instance.hookPullForce * hookDirection);
+        hookedObject.rb.AddForce(Player.instance.hookPullForce * (Player.instance.transform.position - hookedObject.transform.position).normalized);
 
         while (currentHookLength > 0)
         {
             hookOrigin = transform.position;
-            currentHookLength -= Player.instance.hookSpeed * Time.fixedDeltaTime;
-            Vector2 headPos = hookOrigin + currentHookLength * hookDirection;
+            Vector2 headPos = (Vector2)hookedObject.transform.position + objHeadOffset;
+            currentHookLength = (headPos - hookOrigin).magnitude;
             hookLine.SetPosition(0, hookOrigin);
             hookLine.SetPosition(1, headPos);
             hookHead.SetPositionAndRotation(headPos, Quaternion.FromToRotation(Vector2.up, hookDirection));
@@ -114,6 +116,7 @@ public class Hook : MonoBehaviour
     public void HideHook()
     {
         state = HookState.Idle;
+        hookedObject = null;
         hookHead.gameObject.SetActive(false);
         hookLine.gameObject.SetActive(false);
     }
