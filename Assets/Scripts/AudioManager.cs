@@ -11,9 +11,12 @@ public class AudioManager : MonoBehaviour
 
     [Header("Music")]
     public EventReference gameplayMusic;
+    public EventReference titleScreenMusic;
 
     [Header("SFX")]
     public EventReference moo;
+    public EventReference uiClick;
+    public EventReference uiHover;
 
     [Header("Volume")]
     [Range(0, 1)] public float masterVolume { get; set; }

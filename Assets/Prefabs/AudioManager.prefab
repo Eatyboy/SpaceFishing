@@ -51,6 +51,13 @@ MonoBehaviour:
       Data3: 400468371
       Data4: 519165798
     Path: event:/Music/GameplayMusic
+  titleScreenMusic:
+    Guid:
+      Data1: 457876847
+      Data2: 1206610173
+      Data3: 639463863
+      Data4: 549288069
+    Path: event:/Music/TitleScreenMusic
   moo:
     Guid:
       Data1: -1286260187
@@ -58,4 +65,18 @@ MonoBehaviour:
       Data3: 1723228582
       Data4: -457500018
     Path: event:/SFX/Moo
+  uiClick:
+    Guid:
+      Data1: 66161424
+      Data2: 1336815494
+      Data3: 70765729
+      Data4: -1895117538
+    Path: event:/SFX/UIClick
+  uiHover:
+    Guid:
+      Data1: 1643301121
+      Data2: 1151976159
+      Data3: 1651761080
+      Data4: -2113180737
+    Path: event:/SFX/UIHover
   areBussesInitialized: 0

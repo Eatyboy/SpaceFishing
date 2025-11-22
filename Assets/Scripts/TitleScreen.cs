@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -18,6 +19,11 @@ public class TitleScreen : MonoBehaviour
         ctrl = new();
     }
 
+    private void Start()
+    {
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.titleScreenMusic);
+    }
+
     private void OnEnable()
     {
         ctrl.Enable();
@@ -34,6 +40,7 @@ public class TitleScreen : MonoBehaviour
 
     public void ClickSelectedButton(InputAction.CallbackContext ctx)
     {
+        AudioManager.Instance.PlayOneShot(AudioManager.Instance.uiClick);
         selectedButton.onClick.Invoke();
     }
 
@@ -41,10 +48,17 @@ public class TitleScreen : MonoBehaviour
     {
         selectedButtonIndex = (selectedButtonIndex + 1) % buttons.Length;
         selector.position = selectedButton.transform.position;
+        AudioManager.Instance.PlayOneShot(AudioManager.Instance.uiHover);
     }
 
     public void StartGame()
     {
+        StartCoroutine(StartGameCoroutine());
+    }
+
+    private IEnumerator StartGameCoroutine()
+    {
+        yield return Fader.instance.FadeOut();
         SceneManager.LoadScene("Game");
     }
 

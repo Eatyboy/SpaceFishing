@@ -47,7 +47,7 @@ public class ItemSpawner : MonoBehaviour
 
     void Update()
     {
-        if (player == null) return;
+        if (player == null || !Player.instance.gameStarted) return;
         UpdateSpawnedChunks();
     }
 
