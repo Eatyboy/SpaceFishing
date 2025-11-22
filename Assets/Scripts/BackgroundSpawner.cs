@@ -6,7 +6,6 @@ public class BackgroundSpawner : MonoBehaviour
     public Sprite[] backgroundSprites;
     public float[] spawnProbabilities;
     public Transform player;
-    public float parallaxFactor = 0.5f;
 
     public float spawnRadius = 25f;
     public int objectsPerChunk = 10;
@@ -40,9 +39,8 @@ public class BackgroundSpawner : MonoBehaviour
 
     void UpdateChunks()
     {
-        // Use background's relative position instead of player position
-        Vector2 backgroundRelativePos = player.position * parallaxFactor;
-        Vector2Int playerChunk = GetChunkCoord(backgroundRelativePos);
+        // Use this transform's position (which moves with parallax)
+        Vector2Int currentChunk = GetChunkCoord(transform.position);
         int radius = Mathf.CeilToInt(spawnRadius / chunkSize);
 
         HashSet<Vector2Int> chunksToKeep = new HashSet<Vector2Int>();
@@ -52,7 +50,7 @@ public class BackgroundSpawner : MonoBehaviour
         {
             for (int y = -radius; y <= radius; y++)
             {
-                Vector2Int chunk = new Vector2Int(playerChunk.x + x, playerChunk.y + y);
+                Vector2Int chunk = new Vector2Int(currentChunk.x + x, currentChunk.y + y);
                 chunksToKeep.Add(chunk);
 
                 if (!activeChunks.Contains(chunk))

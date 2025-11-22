@@ -604,7 +604,7 @@ PrefabInstance:
       objectReference: {fileID: 4512143735923038310, guid: 18167ba2aba7aa64aa25696e252849c3, type: 3}
     - target: {fileID: 7285562857044944068, guid: 1df44ec0abccd3c4b89ddb848fd44e70, type: 3}
       propertyPath: itemSpawnData.Array.data[0].spawnWeight
-      value: 300
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7285562857044944068, guid: 1df44ec0abccd3c4b89ddb848fd44e70, type: 3}
       propertyPath: itemSpawnData.Array.data[1].spawnWeight

@@ -6,8 +6,13 @@ public class SpaceObject : MonoBehaviour
     public Rigidbody2D rb;
     public float mass;
     public float scale;
+    //from luna
+    public SpriteRenderer spriteRenderer;
 
     [Header("Settings")]
+
+    public Sprite[] spriteVariations;
+
 
     [Header("Item ranges")]
     public Vector2 massRange = new(0.5f, 2f);
@@ -17,6 +22,7 @@ public class SpaceObject : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void InitializeMovement(Vector2 velocity, float angularVelocity)
@@ -36,5 +42,11 @@ public class SpaceObject : MonoBehaviour
         transform.localScale = Vector3.one * scale;
 
         if (rb != null) rb.mass = mass;
+
+        //random sprites varitions
+        if (spriteVariations != null && spriteVariations.Length > 0 && spriteRenderer != null)
+        {
+        spriteRenderer.sprite = spriteVariations[Random.Range(0, spriteVariations.Length)];
+        }
     }
 }
