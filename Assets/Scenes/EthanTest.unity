@@ -254,22 +254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6439673224621133885, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
-      propertyPath: m_Name
-      value: bgspawner
-      objectReference: {fileID: 0}
     - target: {fileID: 6465150338995717340, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
       propertyPath: m_Name
       value: background
       objectReference: {fileID: 0}
-    - target: {fileID: 8221884303667595359, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
-      propertyPath: backgroundSprites.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8221884303667595359, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
-      propertyPath: 'backgroundSprites.Array.data[0]'
-      value: 
-      objectReference: {fileID: 21300000, guid: 6f4a295034527044694c2bd9f998d904, type: 3}
     - target: {fileID: 8510677056603553167, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.23411
@@ -309,26 +297,6 @@ PrefabInstance:
     - target: {fileID: 8510677056603553167, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9114329003449183828, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
-      propertyPath: backgroundSprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9114329003449183828, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
-      propertyPath: spawnProbabilities.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9114329003449183828, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
-      propertyPath: 'backgroundSprites.Array.data[0]'
-      value: 
-      objectReference: {fileID: 21300000, guid: 187dc21ce1f532c40945209cc5aa502a, type: 3}
-    - target: {fileID: 9114329003449183828, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
-      propertyPath: 'backgroundSprites.Array.data[1]'
-      value: 
-      objectReference: {fileID: 21300000, guid: 6af2b8d62a1021442a4981b465750634, type: 3}
-    - target: {fileID: 9114329003449183828, guid: 521d65fe7ab8e8d4d958e878e448bc7d, type: 3}
-      propertyPath: 'spawnProbabilities.Array.data[1]'
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

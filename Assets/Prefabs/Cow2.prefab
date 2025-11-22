@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 883765374767079560, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: bounceDuration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2985508200477035583, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: m_Size.x
       value: 1.2986491
