@@ -2,12 +2,21 @@ using UnityEngine;
 
 public class SpaceObject : MonoBehaviour
 {
-    public float mass;
+    [Header("Properties")]
     public Rigidbody2D rb;
+    public float mass;
+    public float scale;
+
+    [Header("Settings")]
+
+    [Header("Item ranges")]
+    public Vector2 massRange = new(0.5f, 2f);
+    public Vector2 scaleRange = new(0.1f, 5f);
+    public bool isCollectable = false;
 
     private void Awake()
     {
-        rb.mass = mass;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void InitializeMovement(Vector2 velocity, float angularVelocity)
@@ -19,4 +28,13 @@ public class SpaceObject : MonoBehaviour
         }
     }
 
+    public void Initialize(float newScale, float newMass)
+    {
+        scale = newScale;
+        mass = newMass;
+
+        transform.localScale = Vector3.one * scale;
+
+        if (rb != null) rb.mass = mass;
+    }
 }

@@ -21,11 +21,6 @@ public class ItemSpawner : MonoBehaviour
     public int itemsPerChunk = 5;
     public float chunkSize = 15f;
 
-    [Header("Item ranges")]
-    public Vector2 scaleRange = new Vector2(0.5f, 2f);
-    public Vector2 weightRange = new Vector2(0.1f, 5f);
-    public Vector2 valueRange = new Vector2(0f, 100f);
-
     [Header("Initial Movement Settings")]
     public Vector2 initialVelocityRange = new Vector2(0.1f, 0.5f);
     public Vector2 initialAngularVelocityRange = new Vector2(-10f, 10f);
@@ -147,11 +142,8 @@ public class ItemSpawner : MonoBehaviour
               Random.Range(-chunkSize / 2, chunkSize / 2),
               Random.Range(-chunkSize / 2, chunkSize / 2)  
             );
-            Vector2 spawnPos = chunkOrigin + randomOff;
-
-            float scale = Random.Range(scaleRange.x, scaleRange.y);
-            float weight = Random.Range(weightRange.x, weightRange.y);
-            int value = (int) Random.Range(valueRange.x, valueRange.y + 1);
+            Vector3 spawnPos = chunkOrigin + randomOff;
+            spawnPos.z = 0;
 
             GameObject prefabToSpawn = GetWeightedRandomPrefab();
             if (prefabToSpawn == null)
@@ -160,33 +152,33 @@ public class ItemSpawner : MonoBehaviour
                 continue;
             }
 
-            GameObject newItem = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+            GameObject newGameObject = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
 
-            Item itemComp = newItem.GetComponent<Item>();
-            if(itemComp != null)
+            SpaceObject newSpaceObject = newGameObject.GetComponent<SpaceObject>();
+            if(newSpaceObject != null)
             {
-                itemComp.Initialize(scale, weight, value);
-                
+                float scale = Random.Range(newSpaceObject.scaleRange.x, newSpaceObject.scaleRange.y);
+                float weight = Random.Range(newSpaceObject.massRange.x, newSpaceObject.massRange.y);
+                newSpaceObject.Initialize(scale, weight);
+
+                bool isItem = newSpaceObject.TryGetComponent(out Item item);
+                if (isItem)
+                {
+                    int value = Random.Range((int)item.valueRange.x, (int)item.valueRange.y + 1);
+                    item.Initialize(value);
+                }
+                newSpaceObject.isCollectable = isItem;
+
                 Vector2 randomVelocity = Random.insideUnitCircle.normalized * Random.Range(initialVelocityRange.x, initialVelocityRange.y);
                 float randomAngularVelocity = Random.Range(initialAngularVelocityRange.x, initialAngularVelocityRange.y);
-                itemComp.InitializeMovement(randomVelocity, randomAngularVelocity);
+                newSpaceObject.InitializeMovement(randomVelocity, randomAngularVelocity);
             }
             else
             {
-                SpaceObject spaceObj = newItem.GetComponent<SpaceObject>();
-                if (spaceObj != null)
-                {
-                    Vector2 randomVelocity = Random.insideUnitCircle.normalized * Random.Range(initialVelocityRange.x, initialVelocityRange.y);
-                    float randomAngularVelocity = Random.Range(initialAngularVelocityRange.x, initialAngularVelocityRange.y);
-                    spaceObj.InitializeMovement(randomVelocity, randomAngularVelocity);
-                }
-                else
-                {
-                    Debug.LogWarning("Spawned object has neither Item nor SpaceObject component");
-                }
+                Debug.LogWarning("Spawned object has neither Item nor SpaceObject component");
             }
 
-            chunkItems.Add(newItem);
+            chunkItems.Add(newGameObject);
         }
 
         spawnedChunks[chunkCoord] = chunkItems;

@@ -76,9 +76,6 @@ public class Hook : MonoBehaviour
     {
         state = HookState.Pulling;
 
-        Player.instance.rb.AddForce(Player.instance.hookPullForce * hookDirection);
-        hookedObject.rb.AddForce(Player.instance.hookPullForce * (Player.instance.transform.position - hookedObject.transform.position).normalized);
-
         while (currentHookLength > 0)
         {
             hookOrigin = transform.position;
@@ -87,6 +84,9 @@ public class Hook : MonoBehaviour
             hookLine.SetPosition(0, hookOrigin);
             hookLine.SetPosition(1, headPos);
             hookHead.SetPositionAndRotation(headPos, Quaternion.FromToRotation(Vector2.up, hookDirection));
+
+            Player.instance.rb.AddForce(Player.instance.hookPullForce * hookDirection);
+            hookedObject.rb.AddForce(Player.instance.hookPullForce * (Player.instance.transform.position - hookedObject.transform.position).normalized);
 
             yield return new WaitForFixedUpdate();
         }

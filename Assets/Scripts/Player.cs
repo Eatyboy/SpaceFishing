@@ -52,4 +52,20 @@ public class Player : MonoBehaviour
     {
         StartCoroutine(hook.SendHook());
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (hook.state == Hook.HookState.Pulling && collision.gameObject.CompareTag("Object"))
+        {
+            hook.StopAllCoroutines();
+            StartCoroutine(hook.Retract());
+
+            SpaceObject spaceObject = collision.gameObject.GetComponent<SpaceObject>();
+            if (spaceObject.isCollectable)
+            {
+                Item item = collision.gameObject.GetComponent<Item>();
+                item.Collect();
+            }
+        }
+    }
 }

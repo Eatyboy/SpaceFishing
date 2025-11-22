@@ -179,8 +179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e707912144f7999468eeeb553765dbc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceObject
-  mass: 1.5
   rb: {fileID: 4660571006390516676}
+  mass: 1.5
+  scale: 0
+  massRange: {x: 0.5, y: 2}
+  scaleRange: {x: 0.1, y: 5}
+  isCollectable: 0
 --- !u!114 &4407719443898886696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +197,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4c9132b184c3bb38c4359d1e3784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  scale: 1
-  weight: 1
   value: 10
+  valueRange: {x: 0, y: 100}

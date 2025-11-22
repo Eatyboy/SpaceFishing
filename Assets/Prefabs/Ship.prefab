@@ -139,7 +139,7 @@ MonoBehaviour:
   rotationPower: 100
   hookRange: 6
   hookSpeed: 16
-  hookPullForce: 100
+  hookPullForce: 10
   money: 0
 --- !u!58 &4387372219672530889
 CircleCollider2D:
