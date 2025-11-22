@@ -76,6 +76,8 @@ public class Hook : MonoBehaviour
     {
         state = HookState.Pulling;
 
+        float prevHookLength = currentHookLength;
+
         while (currentHookLength > 0)
         {
             hookOrigin = transform.position;
@@ -87,6 +89,11 @@ public class Hook : MonoBehaviour
 
             Player.instance.rb.AddForce(Player.instance.hookPullForce * hookDirection);
             hookedObject.rb.AddForce(Player.instance.hookPullForce * (Player.instance.transform.position - hookedObject.transform.position).normalized);
+
+            if (prevHookLength < currentHookLength) 
+                Player.instance.rb.AddForce(10.0f * Player.instance.hookPullForce * (hookedObject.transform.position - Player.instance.transform.position).normalized);
+
+            prevHookLength = currentHookLength;
 
             yield return new WaitForFixedUpdate();
         }

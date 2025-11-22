@@ -60,7 +60,7 @@ MonoBehaviour:
   player: {fileID: 0}
   spawnRadius: 20
   despawnRadius: 30
-  itemsPerChunk: 5
+  itemsPerChunk: 1
   chunkSize: 15
   initialVelocityRange: {x: 0.1, y: 0.5}
   initialAngularVelocityRange: {x: -10, y: 10}
