@@ -47,20 +47,23 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         ctrl.Enable();
-        ctrl.Player.Button1.performed += Fire;
+        ctrl.Player.Combo.performed += Fire;
     }
 
     private void OnDisable()
     {
-        ctrl.Player.Button1.performed -= Fire;
+        ctrl.Player.Combo.performed -= Fire;
         ctrl.Disable();
     }
 
     public void Update()
     {
-        if (ctrl.Player.Button2.IsPressed())
+        if (ctrl.Player.Button1.IsPressed())
         {
             rb.SetRotation(rb.rotation + rotationPower * Time.deltaTime);
+        } else if (ctrl.Player.Button2.IsPressed())
+        {
+            rb.SetRotation(rb.rotation - rotationPower * Time.deltaTime);
         }
 
         if (hp <= 0) Die();
@@ -74,6 +77,8 @@ public class Player : MonoBehaviour
             float distSq = separation.sqrMagnitude + blackHoleSoftness * blackHoleSoftness;
             float forceMag = blackHoleGravity * hole.spaceObject.mass / distSq;
             rb.AddForce(forceMag * separation.normalized);
+
+            if (separation.magnitude < 0.3f) rb.linearVelocity *= 0.03f;
         }
     }
 
@@ -108,7 +113,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("BlackHole"))
         {
             BlackHole blackHole = collision.gameObject.GetComponent<BlackHole>();
-            hp -= blackHoleDamageFactor * math.log2(blackHole.spaceObject.mass);
+            hp -= blackHoleDamageFactor * Time.fixedDeltaTime * math.log2(blackHole.spaceObject.mass);
         }
     }
 }
