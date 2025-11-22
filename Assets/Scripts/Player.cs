@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public float hookSpeed = 1.0f;
     public float hookPullForce = 1.0f;
 
+    public int money = 0;
+
     private void Awake()
     {
         if (instance != null && instance != this) Destroy(gameObject);
