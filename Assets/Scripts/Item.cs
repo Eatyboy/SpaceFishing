@@ -15,6 +15,7 @@ public class Item : MonoBehaviour
         if (Player.instance != null)
         {
             Player.instance.money += value;
+            UIManager.instance.TextPopup(value);
         }
 
         Destroy(gameObject);

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{a9016ab9-3f9a-44f3-9141-4b5900602c6f}">
+		<property name="assetPath">
+			<value>Music/tinyware.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>74.761496598639454</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{327af8a8-955c-4fef-83a9-2dab05a60d32}</destination>
+		</relationship>
+	</object>
+</objects>
