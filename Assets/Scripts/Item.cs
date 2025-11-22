@@ -7,16 +7,16 @@ public class Item : MonoBehaviour
     public float weight = 1f;
     public int value = 10;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Rigidbody2D rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Start()
     {
         transform.localScale = Vector3.one * scale;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Initialize(float newScale, float newWeight, int newValue)
@@ -27,13 +27,35 @@ public class Item : MonoBehaviour
 
         transform.localScale = Vector3.one * scale;
 
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
             rb.mass = weight;
     }
 
+    public void InitializeMovement(Vector2 velocity, float angularVelocity)
+    {
+        if (rb != null)
+        {
+            rb.linearVelocity = velocity;
+            rb.angularVelocity = angularVelocity;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Collect();
+        }
+    }
+
+    // penis
     public void Collect()
     {
+        if (Player.instance != null)
+        {
+            Player.instance.money += value;
+        }
+
         Destroy(gameObject);
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2985508200477035583}
   - component: {fileID: 4660571006390516676}
   - component: {fileID: 7703920997498366146}
-  - component: {fileID: 8354138806943429145}
+  - component: {fileID: 4407719443898886696}
   m_Layer: 0
   m_Name: Cow1
   m_TagString: Object
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpaceObject
   mass: 1.5
   rb: {fileID: 4660571006390516676}
---- !u!114 &8354138806943429145
+--- !u!114 &4407719443898886696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,6 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be4c9132b184c3bb38c4359d1e3784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  scale: 2
+  scale: 1
   weight: 1
   value: 10

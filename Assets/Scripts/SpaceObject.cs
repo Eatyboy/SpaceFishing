@@ -9,4 +9,14 @@ public class SpaceObject : MonoBehaviour
     {
         rb.mass = mass;
     }
+
+    public void InitializeMovement(Vector2 velocity, float angularVelocity)
+    {
+        if (rb != null)
+        {
+            rb.linearVelocity = velocity;
+            rb.angularVelocity = angularVelocity;
+        }
+    }
+
 }
