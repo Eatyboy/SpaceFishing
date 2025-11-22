@@ -72,10 +72,10 @@ public class Player : MonoBehaviour
     {
         if (!gameStarted) return;
 
-        if (ctrl.Player.Button1.IsPressed())
+        if (ctrl.Player.Button1.IsPressed() && !ctrl.Player.Button2.IsPressed())
         {
             rb.SetRotation(rb.rotation + rotationPower * Time.deltaTime);
-        } else if (ctrl.Player.Button2.IsPressed())
+        } else if (ctrl.Player.Button2.IsPressed() && !ctrl.Player.Button1.IsPressed())
         {
             rb.SetRotation(rb.rotation - rotationPower * Time.deltaTime);
         }
