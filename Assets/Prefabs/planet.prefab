@@ -33,12 +33,20 @@ PrefabInstance:
       value: 20.08
       objectReference: {fileID: 0}
     - target: {fileID: 3544433654782075074, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: m_Size.x
+      value: 19.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544433654782075074, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: m_Size.y
+      value: 19.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544433654782075074, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1107824581, guid: 8adc07f3fb83e3e4294324d3c3e8b4f8, type: 3}
+      objectReference: {fileID: 1655129827, guid: 8adc07f3fb83e3e4294324d3c3e8b4f8, type: 3}
     - target: {fileID: 3544433654782075074, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4407719443898886696, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: value
@@ -91,6 +99,14 @@ PrefabInstance:
     - target: {fileID: 6641082680908691720, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856262943444301492, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: m_Radius
+      value: 8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856262943444301492, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7703920997498366146, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: mass
