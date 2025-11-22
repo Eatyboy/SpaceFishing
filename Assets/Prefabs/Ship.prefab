@@ -140,7 +140,12 @@ MonoBehaviour:
   hookRange: 6
   hookSpeed: 16
   hookPullForce: 10
+  blackHoleGravity: 0.3
+  blackHoleDamageFactor: 1
+  blackHoleSoftness: 4
   money: 0
+  maxHp: 10
+  hp: 10
 --- !u!58 &4387372219672530889
 CircleCollider2D:
   m_ObjectHideFlags: 0

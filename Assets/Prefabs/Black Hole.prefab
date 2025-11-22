@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Black Hole
       objectReference: {fileID: 0}
+    - target: {fileID: 4437584498723534379, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: m_TagString
+      value: BlackHole
+      objectReference: {fileID: 0}
     - target: {fileID: 6641082680908691720, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -87,6 +91,14 @@ PrefabInstance:
     - target: {fileID: 6641082680908691720, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856262943444301492, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856262943444301492, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7703920997498366146, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: massRange.x

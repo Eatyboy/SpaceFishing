@@ -109,13 +109,22 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Combo"",
+                    ""type"": ""Button"",
+                    ""id"": ""f3c6cd3d-eeae-4738-82f1-4dd16439e726"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""22f4d568-bee4-4be4-a88c-614e972e0812"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -126,13 +135,46 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""59592a56-3f8f-44fa-a7c8-d77ebe558576"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Button2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""653d14ca-3f9c-4d46-ad55-44e1dd4e490e"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Combo"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""238fbc6a-3dd6-47af-b6bf-155c2f3da800"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Combo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""fd2a97b7-697c-4af5-9697-74032c3e3ea9"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Combo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -204,6 +246,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Button1 = m_Player.FindAction("Button1", throwIfNotFound: true);
         m_Player_Button2 = m_Player.FindAction("Button2", throwIfNotFound: true);
+        m_Player_Combo = m_Player.FindAction("Combo", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -286,6 +329,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Button1;
     private readonly InputAction m_Player_Button2;
+    private readonly InputAction m_Player_Combo;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -305,6 +349,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Button2".
         /// </summary>
         public InputAction @Button2 => m_Wrapper.m_Player_Button2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Combo".
+        /// </summary>
+        public InputAction @Combo => m_Wrapper.m_Player_Combo;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -337,6 +385,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Button2.started += instance.OnButton2;
             @Button2.performed += instance.OnButton2;
             @Button2.canceled += instance.OnButton2;
+            @Combo.started += instance.OnCombo;
+            @Combo.performed += instance.OnCombo;
+            @Combo.canceled += instance.OnCombo;
         }
 
         /// <summary>
@@ -354,6 +405,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Button2.started -= instance.OnButton2;
             @Button2.performed -= instance.OnButton2;
             @Button2.canceled -= instance.OnButton2;
+            @Combo.started -= instance.OnCombo;
+            @Combo.performed -= instance.OnCombo;
+            @Combo.canceled -= instance.OnCombo;
         }
 
         /// <summary>
@@ -473,5 +527,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnButton2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Combo" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCombo(InputAction.CallbackContext context);
     }
 }
