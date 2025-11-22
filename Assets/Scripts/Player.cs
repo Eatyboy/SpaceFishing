@@ -118,6 +118,16 @@ public class Player : MonoBehaviour
     {
         if (!gameStarted) return;
 
+        if (collision.gameObject.CompareTag("Object"))
+        {
+            HazardousItem hazardousItem = collision.gameObject.GetComponent<HazardousItem>();
+            if (hazardousItem != null)
+            {
+                hazardousItem.HitPlayer();
+                return;
+            }
+        }
+
         if (hook.state == Hook.HookState.Pulling && collision.gameObject.CompareTag("Object") && collision.gameObject == hook.hookedObject.gameObject)
         {
             hook.StopAllCoroutines();
@@ -126,18 +136,10 @@ public class Player : MonoBehaviour
             SpaceObject spaceObject = collision.gameObject.GetComponent<SpaceObject>();
             if (spaceObject.isCollectable)
             {
-                HazardousItem hazardousItem = collision.gameObject.GetComponent<HazardousItem>();
-                if (hazardousItem != null)
+                Item item = collision.gameObject.GetComponent<Item>();
+                if (item != null)
                 {
-                    hazardousItem.HitPlayer();
-                }
-                else
-                {
-                    Item item = collision.gameObject.GetComponent<Item>();
-                    if (item != null)
-                    {
-                        item.Collect();
-                    }
+                    item.Collect();
                 }
             }
         }
