@@ -113,10 +113,10 @@ TextureImporter:
       name: Cow1_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 8
-        width: 881
-        height: 808
+        x: 64
+        y: 148
+        width: 988
+        height: 850
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,7 +125,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5087a34bfcc905348833e785b1cd71b7
+      spriteID: af3ee4c514ebb5a48bd3ad5e91b2a8c9
       internalID: -92569795
       vertices: []
       indices: 
@@ -135,31 +135,9 @@ TextureImporter:
       name: Cow1_1
       rect:
         serializedVersion: 2
-        x: 450
-        y: 6
-        width: 11
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03db86fe12c68ae4f91a4748d2fe607d
-      internalID: -1248551113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow1_2
-      rect:
-        serializedVersion: 2
-        x: 463
-        y: 4
-        width: 14
+        x: 503
+        y: 121
+        width: 10
         height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -169,74 +147,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c72916ee1bb7304d947bead2268ceb8
-      internalID: 1690592613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow1_3
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 37
-        width: 5
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efad194c8f441eb4fb3a8e9e346f9b23
-      internalID: -801676250
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow1_4
-      rect:
-        serializedVersion: 2
-        x: 789
-        y: 34
-        width: 19
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcb2057434aad6b42aecaa43897f8e3b
-      internalID: 1006775102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow1_5
-      rect:
-        serializedVersion: 2
-        x: 809
-        y: 36
-        width: 15
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29d08842d04c56144b54415a1ab70205
-      internalID: 1523526114
+      spriteID: f16a27e0c96e36e4eb7c12c7030c6e33
+      internalID: -1248551113
       vertices: []
       indices: 
       edges: []
@@ -261,10 +173,6 @@ TextureImporter:
     nameFileIdTable:
       Cow1_0: -92569795
       Cow1_1: -1248551113
-      Cow1_2: 1690592613
-      Cow1_3: -801676250
-      Cow1_4: 1006775102
-      Cow1_5: 1523526114
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

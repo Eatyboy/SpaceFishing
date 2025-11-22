@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1535117f5f2a40e4a81818b61be5d685
+guid: dd3f55c89aeeac3499f6bac766fa42aa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AsteroidsSet1_7
+      name: AsteroidsSet2 1_0
       rect:
         serializedVersion: 2
-        x: 174
-        y: 164
-        width: 438
-        height: 443
+        x: 80
+        y: 88
+        width: 225
+        height: 214
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,20 +125,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22ade6cb40934c74e88d02b7470f34a5
-      internalID: 832994172
+      spriteID: 27e8f2322c6234848b625287b2c08ef8
+      internalID: -1860949829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AsteroidsSet1_8
+      name: AsteroidsSet2 1_1
       rect:
         serializedVersion: 2
-        x: 940
-        y: 165
-        width: 437
-        height: 442
+        x: 349
+        y: 84
+        width: 225
+        height: 214
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,30 +147,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23827b7e91b5ce94caa2bfa5235aee98
-      internalID: 1570537773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AsteroidsSet1_9
-      rect:
-        serializedVersion: 2
-        x: 1703
-        y: 165
-        width: 437
-        height: 442
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3b67583eb83f7345b472f53a3f6acb1
-      internalID: 1029062931
+      spriteID: 8f0866e889b2f88449f0c0170cae1338
+      internalID: -933630140
       vertices: []
       indices: 
       edges: []
@@ -179,7 +157,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4f49e4f0f18121c4dafec14394fd05ce
+    spriteID: 112749b8f4f56484ca053e4c1cb65b86
     internalID: 0
     vertices: []
     indices: 
@@ -189,20 +167,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":793.0,"y":778.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":true,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
       - key: SpriteEditor.SliceOnImport
-        value: False
+        value: True
     nameFileIdTable:
-      AsteroidsSet1_0: 1955481422
-      AsteroidsSet1_1: -1518892197
-      AsteroidsSet1_2: -1271692176
-      AsteroidsSet1_3: -252805918
-      AsteroidsSet1_4: -227711442
-      AsteroidsSet1_5: 1477746556
-      AsteroidsSet1_6: -2107268999
-      AsteroidsSet1_7: 832994172
-      AsteroidsSet1_8: 1570537773
-      AsteroidsSet1_9: 1029062931
+      AsteroidsSet2 1_0: -1860949829
+      AsteroidsSet2 1_1: -933630140
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

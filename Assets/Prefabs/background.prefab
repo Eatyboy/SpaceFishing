@@ -137,9 +137,11 @@ MonoBehaviour:
   backgroundSprites:
   - {fileID: 21300000, guid: 6f4a295034527044694c2bd9f998d904, type: 3}
   - {fileID: 21300000, guid: 66bb7127ed1e2584691091c837e57527, type: 3}
+  - {fileID: 21300000, guid: 2e2543df6b666ef489b94a5c99261751, type: 3}
   spawnProbabilities:
   - 0.5
   - 0.2
+  - 0.5
   player: {fileID: 0}
   spawnRadius: 25
   objectsPerChunk: 2
