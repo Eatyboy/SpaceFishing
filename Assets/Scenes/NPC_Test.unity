@@ -659,25 +659,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3619617448945897103, guid: 48a720102bd0e19438dd6c61f4cdfa04, type: 3}
-      propertyPath: m_Color.b
-      value: 0.4669811
-      objectReference: {fileID: 0}
-    - target: {fileID: 3619617448945897103, guid: 48a720102bd0e19438dd6c61f4cdfa04, type: 3}
-      propertyPath: m_Color.g
-      value: 0.4669811
-      objectReference: {fileID: 0}
-    - target: {fileID: 3619617448945897103, guid: 48a720102bd0e19438dd6c61f4cdfa04, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4512143735923038310, guid: 48a720102bd0e19438dd6c61f4cdfa04, type: 3}
       propertyPath: m_Name
       value: NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 6642100916036802809, guid: 48a720102bd0e19438dd6c61f4cdfa04, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6855306318011422533, guid: 48a720102bd0e19438dd6c61f4cdfa04, type: 3}
       propertyPath: m_LocalPosition.x
@@ -722,32 +706,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4512143735923038310, guid: 48a720102bd0e19438dd6c61f4cdfa04, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1785147316}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48a720102bd0e19438dd6c61f4cdfa04, type: 3}
---- !u!1 &1785147315 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4512143735923038310, guid: 48a720102bd0e19438dd6c61f4cdfa04, type: 3}
-  m_PrefabInstance: {fileID: 1785147314}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1785147316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785147315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5736afeb489c814195ee18f52804ec9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
-  startNode: NPC1
-  canRepeat: 1
-  autoStart: 1
-  playerTag: Player
 --- !u!1001 &1945808842
 PrefabInstance:
   m_ObjectHideFlags: 0

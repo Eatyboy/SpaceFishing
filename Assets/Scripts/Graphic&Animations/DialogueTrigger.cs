@@ -54,46 +54,46 @@ public class DialogueTrigger : MonoBehaviour
         var runner = FindObjectOfType<DialogueRunner>();
         if (runner != null && !runner.IsDialogueRunning)
         {
-            DisablePlayerInput();
+            // DisablePlayerInput();
             runner.StartDialogue(startNode);
             hasTriggered = true;
             runner.onDialogueComplete.AddListener(OnDialogueComplete);
         }
     }
 
-    private void DisablePlayerInput()
-    {
-        if (playerObject != null)
-        {
-            // Store all MonoBehaviours and disable them
-            playerScripts = playerObject.GetComponents<MonoBehaviour>();
-            foreach (var script in playerScripts)
-            {
-                if (script != null && script.enabled)
-                {
-                    script.enabled = false;
-                }
-            }
-        }
-    }
+    // private void DisablePlayerInput()
+    // {
+    //     if (playerObject != null)
+    //     {
+    //         // Store all MonoBehaviours and disable them
+    //         playerScripts = playerObject.GetComponents<MonoBehaviour>();
+    //         foreach (var script in playerScripts)
+    //         {
+    //             if (script != null && script.enabled)
+    //             {
+    //                 script.enabled = false;
+    //             }
+    //         }
+    //     }
+    // }
 
-    private void EnablePlayerInput()
-    {
-        if (playerScripts != null)
-        {
-            foreach (var script in playerScripts)
-            {
-                if (script != null)
-                {
-                    script.enabled = true;
-                }
-            }
-        }
-    }
+    // private void EnablePlayerInput()
+    // {
+    //     if (playerScripts != null)
+    //     {
+    //         foreach (var script in playerScripts)
+    //         {
+    //             if (script != null)
+    //             {
+    //                 script.enabled = true;
+    //             }
+    //         }
+    //     }
+    // }
 
     private void OnDialogueComplete()
     {
-        EnablePlayerInput();
+        // EnablePlayerInput();
         
         var runner = FindObjectOfType<DialogueRunner>();
         if (runner != null)
