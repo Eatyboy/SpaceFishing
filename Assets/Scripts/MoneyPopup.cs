@@ -9,12 +9,14 @@ public class MoneyPopup : MonoBehaviour
     public AnimationCurve positionCurve;
     public AnimationCurve scaleCurve;
     public AnimationCurve fadeCurve;
+    public Color positiveColor;
+    public Color negativeColor;
     public Vector2 radiusRange = new(0.5f, 1.0f);
     public float offsetScale = 10.0f;
 
     public Vector3 startPosition;
-    public Color startColor;
     public float time = 0.0f;
+    public int value = 0;
 
     private void Awake()
     {
@@ -35,8 +37,8 @@ public class MoneyPopup : MonoBehaviour
         Vector3 randomOffset = radiusRange * Random.insideUnitCircle;
         startPosition = origin + randomOffset;
         transform.localScale = Vector3.one;
-        startColor = text.color;
         time = 0.0f;
+        value = money;
     }
 
     private void Update()
@@ -46,7 +48,8 @@ public class MoneyPopup : MonoBehaviour
 
         float yOffset = positionCurve.Evaluate(t);
         float scale = scaleCurve.Evaluate(t);
-        text.color = startColor * new Color(1.0f, 1.0f, 1.0f, fadeCurve.Evaluate(t));
+        Color color = (value >= 0) ? positiveColor : negativeColor;
+        text.color = color * new Color(1.0f, 1.0f, 1.0f, fadeCurve.Evaluate(t));
         transform.position = startPosition + yOffset * Vector3.up;
 
         transform.localScale = Vector3.one * scale;

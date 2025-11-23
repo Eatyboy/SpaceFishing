@@ -241,7 +241,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  positiveColor: {r: 1, g: 0.9714467, b: 0.15408784, a: 1}
+  negativeColor: {r: 0.9496855, g: 0.15828082, b: 0.15828082, a: 1}
   radiusRange: {x: 0.5, y: 1}
+  offsetScale: 10
   startPosition: {x: 0, y: 0, z: 0}
-  startColor: {r: 0, g: 0, b: 0, a: 0}
   time: 0
+  value: 0
