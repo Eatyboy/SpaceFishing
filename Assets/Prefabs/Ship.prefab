@@ -226,8 +226,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   rb: {fileID: 6611777019563995831}
   hook: {fileID: 4816621478740225942}
+  deathScreen: {fileID: 0}
   mass: 1
-  rotationPower: 100
+  rotationPower: 200
   hookRange: 6
   hookSpeed: 16
   hookPullForce: 10
@@ -235,8 +236,12 @@ MonoBehaviour:
   blackHoleDamageFactor: 1
   blackHoleSoftness: 4
   money: 0
+  startingMoney: 100
   maxHp: 10
   hp: 10
+  hookCost: 5
+  hookCostIncrease: 1
+  currentHookCost: 0
   gameStarted: 0
 --- !u!58 &4387372219672530889
 CircleCollider2D:

@@ -137,7 +137,9 @@ MonoBehaviour:
   rb: {fileID: 4660571006390516676}
   mass: 1.5
   scale: 0
+  soundType: 0
   spriteRenderer: {fileID: 0}
+  particlePrefab: {fileID: 1739430061196619880, guid: 4434ed2426a73da41a0acd3feba3c06c, type: 3}
   spriteVariations: []
   massRange: {x: 0.5, y: 5}
   scaleRange: {x: 0.1, y: 1}

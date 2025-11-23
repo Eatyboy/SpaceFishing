@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{197b18cc-97f6-4784-82de-88de13a65a77}">
+		<property name="assetPath">
+			<value>SFX/shield_impact-1-382410.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.0399999999999991</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{327af8a8-955c-4fef-83a9-2dab05a60d32}</destination>
+		</relationship>
+	</object>
+</objects>

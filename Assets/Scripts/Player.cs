@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
             rb.SetRotation(rb.rotation - rotationPower * Time.deltaTime);
         }
 
-        if (hp <= 0 || money < currentHookCost)
+        if (hp <= 0 || (money < currentHookCost && hook.state == Hook.HookState.Idle))
         {
             StartCoroutine(Die());
         }
@@ -147,6 +147,10 @@ public class Player : MonoBehaviour
         isDying = true;
         gameStarted = false;
 
+        yield return hook.Retract();
+
+        AudioManager.Instance.StopMusic();
+
         yield return new WaitForSeconds(0.5f);
 
         deathScreen.gameObject.SetActive(true);
@@ -158,6 +162,8 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Object"))
         {
+            AudioManager.Instance.PlayOneShot(AudioManager.Instance.shipHit);
+
             HazardousItem hazardousItem = collision.gameObject.GetComponent<HazardousItem>();
             if (hazardousItem != null)
             {

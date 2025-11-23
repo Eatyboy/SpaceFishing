@@ -107,4 +107,11 @@ MonoBehaviour:
       Data3: -570348892
       Data4: -372278871
     Path: event:/SFX/Grapple
+  shipHit:
+    Guid:
+      Data1: -253834654
+      Data2: 1216023802
+      Data3: 816473231
+      Data4: 741297229
+    Path: event:/SFX/ShipHit
   areBussesInitialized: 0

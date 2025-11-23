@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     public EventReference metal;
     public EventReference rock;
     public EventReference grapple;
+    public EventReference shipHit;
 
     [Header("Volume")]
     [Range(0, 1)] public float masterVolume { get; set; }

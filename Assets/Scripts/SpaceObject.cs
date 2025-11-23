@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpaceObject : MonoBehaviour
@@ -17,6 +18,7 @@ public class SpaceObject : MonoBehaviour
     public SoundType soundType = SoundType.None;
     //from luna
     public SpriteRenderer spriteRenderer;
+    public ParticleSystem particlePrefab;
 
     [Header("Settings")]
 
@@ -57,5 +59,23 @@ public class SpaceObject : MonoBehaviour
         {
         spriteRenderer.sprite = spriteVariations[Random.Range(0, spriteVariations.Length)];
         }
+    }
+
+    HashSet<ParticleSystem> particleSpawners = new();
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Hook"))
+        {
+            particleSpawners.Add(Instantiate(particlePrefab, transform.position, Quaternion.FromToRotation(Vector3.up, collision.contacts[0].normal)));
+        }
+    }
+
+    private void OnDestroy()
+    {
+        foreach(var spawner in particleSpawners)
+        {
+            Destroy(spawner.gameObject);
+        }
+        particleSpawners.Clear();
     }
 }
