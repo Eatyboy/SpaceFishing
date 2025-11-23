@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TitleScreen : MonoBehaviour
+public class DeathScreen : MonoBehaviour
 {
     private InputSystem_Actions ctrl;
 
@@ -21,16 +20,20 @@ public class TitleScreen : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlayMusic(AudioManager.Instance.titleScreenMusic);
-
         StartCoroutine(StartRoutine());
     }
-
     private IEnumerator StartRoutine()
     {
         yield return new WaitForEndOfFrame();
         SelectButton(0);
-        yield return Fader.instance.FadeIn();
+    }
+
+    public void SelectButton(int index)
+    {
+        selectedButtonIndex = index;
+        selector.position = selectedButton.transform.position;
+        selector.sizeDelta = 2.0f * new Vector2(200 + selectedButton.GetComponent<RectTransform>().rect.width, 100);
+        AudioManager.Instance.PlayOneShot(AudioManager.Instance.uiHover);
     }
 
     private void OnEnable()
@@ -53,25 +56,17 @@ public class TitleScreen : MonoBehaviour
         selectedButton.onClick.Invoke();
     }
 
-    public void SelectButton(int index)
-    {
-        selectedButtonIndex = index;
-        selector.position = selectedButton.transform.position;
-        selector.sizeDelta = 2.0f * new Vector2(200 + selectedButton.GetComponent<RectTransform>().rect.width, 100);
-        AudioManager.Instance.PlayOneShot(AudioManager.Instance.uiHover);
-    }
-
     public void SelectNextButton(InputAction.CallbackContext ctx)
     {
         SelectButton((selectedButtonIndex + 1) % buttons.Length);
     }
 
-    public void StartGame()
+    public void RestartGame()
     {
-        StartCoroutine(StartGameCoroutine());
+        StartCoroutine(RestartGameCoroutine());
     }
 
-    private IEnumerator StartGameCoroutine()
+    private IEnumerator RestartGameCoroutine()
     {
         yield return Fader.instance.FadeOut();
         SceneManager.LoadScene("Game");
@@ -79,6 +74,13 @@ public class TitleScreen : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        StartCoroutine(QuitGameCoroutine());
+    }
+
+    private IEnumerator QuitGameCoroutine()
+    {
+        yield return Fader.instance.FadeOut();
+
+        SceneManager.LoadScene("TitleScreen");
     }
 }

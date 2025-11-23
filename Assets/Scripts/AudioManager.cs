@@ -18,6 +18,9 @@ public class AudioManager : MonoBehaviour
     public EventReference uiClick;
     public EventReference uiHover;
     public EventReference collect;
+    public EventReference metal;
+    public EventReference rock;
+    public EventReference grapple;
 
     [Header("Volume")]
     [Range(0, 1)] public float masterVolume { get; set; }

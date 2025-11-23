@@ -86,4 +86,25 @@ MonoBehaviour:
       Data3: -1399376763
       Data4: -825307566
     Path: event:/SFX/Collect
+  metal:
+    Guid:
+      Data1: 1768272453
+      Data2: 1188837399
+      Data3: -2054925650
+      Data4: 336366922
+    Path: event:/SFX/Metal
+  rock:
+    Guid:
+      Data1: -156849577
+      Data2: 1261578971
+      Data3: 44370059
+      Data4: 741685873
+    Path: event:/SFX/Rock
+  grapple:
+    Guid:
+      Data1: -744812581
+      Data2: 1238514385
+      Data3: -570348892
+      Data4: -372278871
+    Path: event:/SFX/Grapple
   areBussesInitialized: 0

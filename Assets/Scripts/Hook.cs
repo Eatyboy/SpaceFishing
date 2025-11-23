@@ -35,6 +35,8 @@ public class Hook : MonoBehaviour
     {
         if (state != HookState.Idle) yield break;
 
+        AudioManager.Instance.PlayOneShot(AudioManager.Instance.grapple);
+
         state = HookState.Sending;
         currentHookLength = 0.0f;
         hookOrigin = transform.position;

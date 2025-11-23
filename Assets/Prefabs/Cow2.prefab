@@ -32,6 +32,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -913650890, guid: 35c614ad6c10eb64c8af3961b24bb72b, type: 3}
+    - target: {fileID: 4407719443898886696, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: valueRange.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407719443898886696, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: valueRange.y
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4437584498723534379, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: m_Name
       value: Cow2

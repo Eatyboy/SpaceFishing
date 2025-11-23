@@ -139,8 +139,8 @@ MonoBehaviour:
   scale: 0
   spriteRenderer: {fileID: 0}
   spriteVariations: []
-  massRange: {x: 0.5, y: 2}
-  scaleRange: {x: 0.1, y: 5}
+  massRange: {x: 0.5, y: 5}
+  scaleRange: {x: 0.1, y: 1}
   isCollectable: 0
 --- !u!114 &4407719443898886696
 MonoBehaviour:
