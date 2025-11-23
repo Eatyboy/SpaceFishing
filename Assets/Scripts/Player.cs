@@ -31,10 +31,16 @@ public class Player : MonoBehaviour
     public float blackHoleSoftness = 0.5f;
 
     public int money = 0;
+    public int startingMoney = 100;
     public float maxHp = 10.0f;
     public float hp = 10.0f;
 
+    public int hookCost = 5;
+    public int hookCostIncrease = 1;
+    public int currentHookCost;
+
     public bool gameStarted = false;
+    private bool isDying = false;
 
     private void Awake()
     {
@@ -44,8 +50,11 @@ public class Player : MonoBehaviour
         ctrl = new();
         rb.mass = mass;
         hp = maxHp;
+        money = startingMoney;
+        currentHookCost = hookCost;
         deathScreen.gameObject.SetActive(false);
     }
+
     private void Start()
     {
         StartCoroutine(StartGame());
@@ -55,9 +64,16 @@ public class Player : MonoBehaviour
     {
         gameStarted = false;
 
-        yield return Fader.instance.FadeIn();
+        if (Fader.instance != null)
+        {
+            yield return Fader.instance.FadeIn();
+        }
 
-        AudioManager.Instance.PlayMusic(AudioManager.Instance.gameplayMusic);
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayMusic(AudioManager.Instance.gameplayMusic);
+        }
+
         gameStarted = true;
     }
 
@@ -75,7 +91,7 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
-        if (!gameStarted) return;
+        if (!gameStarted || isDying) return;
 
         if (ctrl.Player.Button1.IsPressed() && !ctrl.Player.Button2.IsPressed())
         {
@@ -85,7 +101,10 @@ public class Player : MonoBehaviour
             rb.SetRotation(rb.rotation - rotationPower * Time.deltaTime);
         }
 
-        if (hp <= 0) Die();
+        if (hp <= 0 || money < currentHookCost)
+        {
+            StartCoroutine(Die());
+        }
     }
 
     private void FixedUpdate()
@@ -106,19 +125,38 @@ public class Player : MonoBehaviour
     private void Fire(InputAction.CallbackContext ctx)
     {
         if (!gameStarted) return;
+        if (hook.state != Hook.HookState.Idle) return;
 
-        StartCoroutine(hook.SendHook());
+        if (money >= currentHookCost)
+        {
+            money -= currentHookCost;
+            UIManager.instance.CostPopup(currentHookCost);
+            currentHookCost += hookCostIncrease;
+            StartCoroutine(hook.SendHook());
+        }
     }
 
     [ContextMenu("Kill Player")]
     public void Die()
     {
+        isDying = true;
+        gameStarted = false;
         deathScreen.gameObject.SetActive(true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!gameStarted) return;
+
+        if (collision.gameObject.CompareTag("Object"))
+        {
+            HazardousItem hazardousItem = collision.gameObject.GetComponent<HazardousItem>();
+            if (hazardousItem != null)
+            {
+                hazardousItem.HitPlayer();
+                return;
+            }
+        }
 
         if (hook.state == Hook.HookState.Pulling && collision.gameObject.CompareTag("Object") && collision.gameObject == hook.hookedObject.gameObject)
         {
@@ -128,18 +166,10 @@ public class Player : MonoBehaviour
             SpaceObject spaceObject = collision.gameObject.GetComponent<SpaceObject>();
             if (spaceObject.isCollectable)
             {
-                HazardousItem hazardousItem = collision.gameObject.GetComponent<HazardousItem>();
-                if (hazardousItem != null)
+                Item item = collision.gameObject.GetComponent<Item>();
+                if (item != null)
                 {
-                    hazardousItem.HitPlayer();
-                }
-                else
-                {
-                    Item item = collision.gameObject.GetComponent<Item>();
-                    if (item != null)
-                    {
-                        item.Collect();
-                    }
+                    item.Collect();
                 }
             }
         }

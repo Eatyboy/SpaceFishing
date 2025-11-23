@@ -23,7 +23,14 @@ public class MoneyPopup : MonoBehaviour
 
     public void Initialize(int money, Vector3 origin)
     {
-        text.text = $"+${money}";
+        if (money >= 0)
+        {
+            text.text = $"+${money}";
+        }
+        else
+        {
+            text.text = $"-${Mathf.Abs(money)}";
+        }
 
         Vector3 randomOffset = radiusRange * Random.insideUnitCircle;
         startPosition = origin + randomOffset;
