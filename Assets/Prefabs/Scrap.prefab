@@ -69,6 +69,10 @@ PrefabInstance:
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7703920997498366146, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: soundType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703920997498366146, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
       propertyPath: scaleRange.x
       value: 0.5
       objectReference: {fileID: 0}

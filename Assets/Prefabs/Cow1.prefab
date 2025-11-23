@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.37
       objectReference: {fileID: 0}
+    - target: {fileID: 7703920997498366146, guid: b4ddca24aaaccbc498a07fd3a90fd727, type: 3}
+      propertyPath: soundType
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
