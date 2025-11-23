@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4859922, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -328,8 +328,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282568423
-  m_fontColor: {r: 0.9056604, g: 0.80839235, b: 0.2591668, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -709,3 +709,4 @@ MonoBehaviour:
   hpBar: {fileID: 1330646481271961211}
   moneyPopupPrefab: {fileID: 2037339160647501680, guid: baa645b37de586140bd32626317202bb, type: 3}
   moneyPopupOrigin: {fileID: 4118206267228815270}
+  costPopupOrigin: {fileID: 0}
