@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class Player : MonoBehaviour
 {
@@ -33,7 +34,14 @@ public class Player : MonoBehaviour
     public int money = 0;
     public int startingMoney = 100;
     public float maxHp = 10.0f;
-    public float hp = 10.0f;
+    private float _hp;
+    public float hp 
+    { 
+        get { return _hp; }
+        set { _hp = Mathf.Min(value, maxHp); }
+    }
+    public static int maxMoneyEver = 0;
+    
 
     public int hookCost = 5;
     public int hookCostIncrease = 1;
@@ -104,6 +112,11 @@ public class Player : MonoBehaviour
         if (hp <= 0 || (money < currentHookCost && hook.state == Hook.HookState.Idle))
         {
             StartCoroutine(Die());
+        }
+
+        if (money > maxMoneyEver)
+        {
+            maxMoneyEver = money;
         }
     }
 
@@ -215,4 +228,52 @@ public class Player : MonoBehaviour
             hp -= blackHoleDamageFactor * Time.fixedDeltaTime * math.log2(blackHole.spaceObject.mass);
         }
     }
+
+
+    //yarn functions for adds-ons
+    // [YarnCommand("trade_hook_range")]
+    // public void TradeForHookRange(int cost, float rangeIncrease)
+    // {
+    //     if (money >= cost)
+    //     {
+    //         money -= cost;
+    //         hookRange += rangeIncrease;
+    //         UIManager.instance.CostPopup(cost);
+    //     }
+    // }
+
+    // [YarnCommand("trade_max_hp")]
+    // public void TradeForMaxHp(int cost, float hpIncrease)
+    // {
+    //     if (money >= cost)
+    //     {
+    //         money -= cost;
+    //         maxHp += hpIncrease;
+    //         hp += hpIncrease; // Also heal by the increase amount
+    //         UIManager.instance.CostPopup(cost);
+    //     }
+    // }
+
+    // [YarnCommand("trade_rotation_speed")]
+    // public void TradeForRotationSpeed(int cost, float speedIncrease)
+    // {
+    //     if (money >= cost)
+    //     {
+    //         money -= cost;
+    //         rotationPower += speedIncrease;
+    //         UIManager.instance.CostPopup(cost);
+    //     }
+    // }
+
+    // [YarnCommand("trade_heal")]
+    // public void TradeForHeal(int cost)
+    // {
+    //     if (money >= cost)
+    //     {
+    //         money -= cost;
+    //         hp = maxHp;
+    //         UIManager.instance.CostPopup(cost);
+    //     }
+    // }
+
 }

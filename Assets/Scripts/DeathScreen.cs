@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class DeathScreen : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class DeathScreen : MonoBehaviour
     public int selectedButtonIndex = 0;
     public RectTransform selector;
     public Button selectedButton => buttons[selectedButtonIndex];
+    public TextMeshProUGUI maxMoneyText;
 
     private void Awake()
     {
@@ -41,6 +43,7 @@ public class DeathScreen : MonoBehaviour
         ctrl.Enable();
         ctrl.Player.Button1.performed += ClickSelectedButton;
         ctrl.Player.Button2.performed += SelectNextButton;
+        maxMoneyText.text = "Most Money Made: " + Player.maxMoneyEver;
     }
 
     private void OnDisable()

@@ -17,3 +17,53 @@ I heard there is a place where the sky is no longer endless darkness.
 Where the ground is solid and covered by green living, multicellular organisms.
 And the best part... There will be many, many milky creatures!!!
 ===
+
+title: NPC4
+---
+It’s me… the Space Cowboy!
+I’m the guardian of every last cow in space.
+And lemme tell ya—
+These lil' fellows LOVE me.
+Now c’mon, young folk—
+take yerselves some milk!
+// <<trade_heal 0>>
+===
+
+title: NPC5
+---
+belileanldlaenidddnfabei.
+You: What.
+ieaoeiaoieoaaaoil?
+You: Okay?
+ialskeiadsoiuelil!
+
+oibilsoaisoeiobi...!
+// <<if not visited("NPC5")>>
+//     (Your max got increased by 5)
+//     <<trade_max_hp 0 5>>
+// <<endif>>
+===
+
+title: NPC6
+---
+WOhooOooooooooo!!!
+I love spin spin spinning in the space!
+// Do you wanna spin fast just like me?
+// -> (Boost Rotation Power with $100)
+//     <<trade_rotation_speed 50 50.0>>
+// -> Cancel
+~~~ Spending my day ~~ Spinning away ~~ Floating in Space ~~~
+===
+
+title: NPC7
+---
+Do you know what REAL metal music is?!
+It ain’t just noise—it’s POWER.
+Trust me, to reach farther in this space, you gotta learn how to HOOK HARDER.
+//  I can crank your gear with 100 bucks.
+// -> (Boost hook range with $100)
+//     <<trade_hook_range 100 50.0>>
+// -> Cancel
+ROCK. AND. ROLL.!!!!
+
+===

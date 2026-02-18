@@ -139,21 +139,29 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 66bb7127ed1e2584691091c837e57527, type: 3}
   - {fileID: 21300000, guid: 2e2543df6b666ef489b94a5c99261751, type: 3}
   - {fileID: 789147893, guid: 13cc40240f4960e42a22f2edf189f58a, type: 3}
+  - {fileID: 21300000, guid: 183e7feb4666e2f46975b73170e404b6, type: 3}
+  - {fileID: 21300000, guid: 90e5da8c80ed3da4fa3e99893a2566a5, type: 3}
+  - {fileID: 21300000, guid: 8e6a0037d8589e34c90f0a442145870d, type: 3}
+  - {fileID: 21300000, guid: 27ffbea5cf7cd4b47b752602f94928f4, type: 3}
   - {fileID: 21300000, guid: fb30ea4020883a64aa6cb36b82ddbe13, type: 3}
   - {fileID: 453517203, guid: a3d6b7898aed4ff4ab31a549e0dedcaf, type: 3}
   spawnProbabilities:
   - 0.5
   - 0.2
-  - 0.5
+  - 0.4
   - 0.2
-  - 0.2
-  - 0.2
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
   player: {fileID: 0}
-  spawnRadius: 25
-  objectsPerChunk: 2
-  chunkSize: 60
+  spawnRadius: 45
+  objectsPerChunk: 3
+  chunkSize: 100
   scaleRange: {x: 0.8, y: 1.5}
-  minDistance: 10
+  minDistance: 20
 --- !u!1 &6465150338995717340
 GameObject:
   m_ObjectHideFlags: 0

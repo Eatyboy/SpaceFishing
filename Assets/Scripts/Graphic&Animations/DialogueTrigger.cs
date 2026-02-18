@@ -61,36 +61,6 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    // private void DisablePlayerInput()
-    // {
-    //     if (playerObject != null)
-    //     {
-    //         // Store all MonoBehaviours and disable them
-    //         playerScripts = playerObject.GetComponents<MonoBehaviour>();
-    //         foreach (var script in playerScripts)
-    //         {
-    //             if (script != null && script.enabled)
-    //             {
-    //                 script.enabled = false;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // private void EnablePlayerInput()
-    // {
-    //     if (playerScripts != null)
-    //     {
-    //         foreach (var script in playerScripts)
-    //         {
-    //             if (script != null)
-    //             {
-    //                 script.enabled = true;
-    //             }
-    //         }
-    //     }
-    // }
-
     private void OnDialogueComplete()
     {
         // EnablePlayerInput();
